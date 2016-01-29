@@ -1,0 +1,21 @@
+﻿<div class="panel-primary col-sm-10 col-sm-offset-2">
+   <div class="panel-heading">Students
+       <button type="button" class="btn-info" data-toggle="modal" data-target="#myCreateModal">
+            <span class="glyphicon glyphicon-plus"></span>
+       </button>
+   </div>
+   <div class="panel-body">
+        <div ng-repeat="student in ctrl.students" class="panel-default col-sm-2 griditem">
+            <div class="panel-heading">{{student.FirstMidName}}</div>
+            <div class="panel-body">Student ID : {{student.StudentID}}</div>
+            <div class="panel-footer">
+            <button type="button" class="btn-link" data-toggle="modal" data-target="#myEditModal" ng-click="ctrl.getStudent(student.StudentID)">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </button>
+            <button type="button" class="btn-link" data-toggle="modal" data-target="#myDeleteModal" ng-click="ctrl.getStudent(student.StudentID)">
+                <span class="glyphicon glyphicon-trash"></span>
+            </button>
+            </div>
+       </div>
+    </div>
+</div>

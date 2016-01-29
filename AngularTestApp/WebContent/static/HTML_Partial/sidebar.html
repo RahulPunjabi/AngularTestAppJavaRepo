@@ -1,0 +1,10 @@
+﻿<div class="navbar navbar-default col-sm-2 sidebar" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="#">Sidebar Menu</a>
+        </div>
+        <ul class="nav navbar-nav">
+                <li ng-repeat="model in ctrl.ContollerModels" ng-click="ctrl.loadGrid(model)"><a href="#">{{model}}</a></li>
+        </ul>
+    </div>
+</div>
