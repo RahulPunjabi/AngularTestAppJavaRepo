@@ -15,7 +15,7 @@
     <!-- Custom CSS -->
     <link href="static/assets/css/portfolio-item.css" rel="stylesheet">
 
-    <title></title>
+    <title>AngularTestApp</title>
 
 </head>
 <body ng-app="mainApp" ng-controller="MainCtrl as ctrl">
