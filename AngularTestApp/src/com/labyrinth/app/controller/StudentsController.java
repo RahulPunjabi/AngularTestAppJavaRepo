@@ -18,7 +18,6 @@ public class StudentsController {
 	{
 		List<Student> studentList=new ArrayList<>();
 		studentList.add(new Student(1, "Rahul", "Punjabi", new Date()));
-		//git hook remote
 		studentList.add(new Student(2, "FName", "LName", new Date()));
 		
 		return studentList;
