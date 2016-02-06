@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DynamicModelsController {
 
 	@RequestMapping(value="/api/DynamicModels", method=RequestMethod.GET)
-	public List<String> getAllStudents()
+	public List<String> getDynamicModels()
 	{
 		List<String> dynamicModelList=new ArrayList<>();
 		dynamicModelList.add("Students");

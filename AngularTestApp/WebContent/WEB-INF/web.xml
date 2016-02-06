@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
   <display-name>AngularTestApp</display-name>
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
   </welcome-file-list>
   
     <servlet>
@@ -14,9 +14,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>rest</servlet-name>
-        <url-pattern>/welcome.jsp</url-pattern>
-        <url-pattern>/welcome.html</url-pattern>
-        <url-pattern>*.html</url-pattern>
         <url-pattern>*.do</url-pattern>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
