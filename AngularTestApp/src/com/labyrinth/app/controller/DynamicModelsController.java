@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DynamicModelsController {
 
+	//commit check
 	@RequestMapping(value="/api/DynamicModels", method=RequestMethod.GET)
 	public List<String> getDynamicModels()
 	{
