@@ -2,11 +2,32 @@ package com.labyrinth.app.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@Entity
+@Table(name="student")
 public class Student {
 
+	@Id
+	@GeneratedValue
+	@Column(name="student_ID")
 	private Integer StudentID; 
+	
+	@Column(name="first_name")
 	private String FirstMidName;
+	
+	@Column(name="last_name")
 	private String LastName;
+	
+	@Column(name="enrollment_date")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm a z")
 	private Date EnrollmentDate;
 
 	
@@ -15,6 +36,12 @@ public class Student {
 		this.FirstMidName = firstMidName;
 		this.LastName = lastName;
 		this.EnrollmentDate = enrollmentDate;
+	}
+	
+	//jackson
+	public Student()
+	{
+		
 	}
 
 	public Integer getStudentID() {

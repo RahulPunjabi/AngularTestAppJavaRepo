@@ -31,7 +31,7 @@
     //getAll
     this.loadGrid = function (modelName) {
         globalModelName = modelName;
-        $http.get('api/' + globalModelName)
+        $http.get('api/' + globalModelName,{cache:false})
             .success(function (data) {
               scope.students = data;
               console.log(data);
@@ -43,7 +43,7 @@
         $http.get('api/Students/' + studentID)
         .success(function (data) {
             scope.student = data;
-            scope.student.EnrollmentDate = new Date(data['EnrollmentDate']);
+            scope.student.enrollmentDate = new Date(data['enrollmentDate']);
             console.log(scope.student.EnrollmentDate);
             console.log(data);
         })
@@ -52,6 +52,7 @@
 
     //Create
     this.createStudent = function (student) {
+        scope.student.enrollmentDate = new Date(student['enrollmentDate']);
         $http.post('api/Students', student)
         .success(function () {
             console.log("Created");
@@ -62,6 +63,7 @@
 
     //Update
     this.editStudent = function (studentID,student) {
+        scope.student.enrollmentDate = new Date(student['enrollmentDate']);
         $http.put('api/Students/' + studentID, student)
         .success(function () {
             console.log("Updated");
