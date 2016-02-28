@@ -52,7 +52,6 @@
 
     //Create
     this.createStudent = function (student) {
-        scope.student.enrollmentDate = new Date(student['enrollmentDate']);
         $http.post('api/Students', student)
         .success(function () {
             console.log("Created");
@@ -63,7 +62,6 @@
 
     //Update
     this.editStudent = function (studentID,student) {
-        scope.student.enrollmentDate = new Date(student['enrollmentDate']);
         $http.put('api/Students/' + studentID, student)
         .success(function () {
             console.log("Updated");

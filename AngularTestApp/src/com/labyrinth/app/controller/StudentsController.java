@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,11 +46,11 @@ public class StudentsController {
 	}
 	
 	//update
-	@RequestMapping(value="/api/Students/{studentID}", method=RequestMethod.PUT)
+	@RequestMapping(value="/api/Students/{studentID}", method=RequestMethod.PUT,consumes=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(value = HttpStatus.OK)
-	public void putStudent(@PathVariable Integer studentID, @RequestBody String studentJSON) throws JsonMappingException,JsonParseException,IOException
+	public void putStudent(@PathVariable Integer studentID, @RequestBody Student student) throws JsonMappingException,JsonParseException,IOException
 	{
-		Student student=objectMapper.readValue(studentJSON, Student.class);
+		//Student student=objectMapper.readValue(studentJSON, Student.class);
 		studentDAO.saveOrUpdate(student);
 	}
 	
@@ -61,11 +62,11 @@ public class StudentsController {
 		studentDAO.delete(studentID);
 	}
 	
-	@RequestMapping(value="/api/Students", method=RequestMethod.POST)
+	@RequestMapping(value="/api/Students", method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(value = HttpStatus.OK)
-	public void createStudent(@RequestBody String studentJSON) throws JsonMappingException,JsonParseException,IOException
+	public void createStudent(@RequestBody Student student) throws JsonMappingException,JsonParseException,IOException
 	{
-			Student student=objectMapper.readValue(studentJSON, Student.class);
+			//Student student=objectMapper.readValue(studentJSON, Student.class);
 			studentDAO.saveOrUpdate(student);
 		
 	}
