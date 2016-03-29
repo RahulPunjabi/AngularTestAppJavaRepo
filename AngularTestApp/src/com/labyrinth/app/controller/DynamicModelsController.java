@@ -33,6 +33,7 @@ public class DynamicModelsController {
 		}*/
 		List<String> dynamicModelList=new ArrayList<>();
 		dynamicModelList.add("Students");
+		dynamicModelList.add("Courses");
 		
 		return dynamicModelList;
 	}

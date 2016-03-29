@@ -23,6 +23,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.labyrinth.app.dao.CourseDAO;
+import com.labyrinth.app.dao.CourseDAOImpl;
 import com.labyrinth.app.dao.StudentDAO;
 import com.labyrinth.app.dao.StudentDAOImpl;
 import com.labyrinth.app.model.Student;
@@ -90,5 +92,11 @@ public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
     @Bean(name = "studentDAO")
     public StudentDAO getStudentDAO(SessionFactory sessionFactory) {
         return new StudentDAOImpl(sessionFactory);
+    }
+    
+    @Autowired
+    @Bean(name = "courseDAO")
+    public CourseDAO getCourseDAO(SessionFactory sessionFactory) {
+        return new CourseDAOImpl(sessionFactory);
     }
 }
