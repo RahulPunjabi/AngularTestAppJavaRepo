@@ -13,7 +13,7 @@
         <form name="studentForm" role="form">
         <div class="form-group" ng-repeat="item in ctrl.sample.columns">
         	<label for="{{item.columnName}}">{{item.columnName}}</label>
-            <input type="{{item.data.inputType}}" class="form-control" ng-model="ctrl.newModel[item.columnName]" id="lname" placeholder="Enter Last Name" required />
+            <input type="{{item.data.inputType}}" class="form-control" ng-model="ctrl.newModel[item.columnName]" id="lname" placeholder="" required />
         <!-- </div>
             <div class="form-group">
                 <label for="fname" >First Name:</label>
@@ -30,7 +30,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <div class="alert alert-success fade in ng-hide" ng-show="ctrl.showCreateAlert">Student has been added successfully !</div>
+        <div class="alert alert-success fade in ng-hide" ng-show="ctrl.showCreateAlert">Added successfully !</div>
         <button type="button" class="btn btn-success" ng-disabled="studentForm.$invalid" ng-click="ctrl.createStudent(ctrl.newModel)">Save</button>
         <button type="button" class="btn btn-default" ng-click="ctrl.resetFlag()" data-dismiss="modal">Close</button>
       </div>
